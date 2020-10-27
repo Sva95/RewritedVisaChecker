@@ -6,19 +6,6 @@
     android:padding="16dp"
     tools:context="com.example.rewritedvisachecker.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/container_input_visa_data"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
-        android:shadowColor="@color/colorPrimaryDark"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="2"
-        android:text="@string/header_enter_data"
-        android:textSize="25sp" />
-
     <LinearLayout
         android:id="@+id/container_input_visa_data"
         android:layout_width="match_parent"
@@ -26,12 +13,25 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="25dp"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="@string/header_enter_data"
+            android:textSize="25sp" />
+
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/applicationNumber"
+                android:id="@+id/edt_app_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/user_number"
@@ -43,31 +43,28 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/applicationNumberFake"
+                android:id="@+id/edt_number_fake"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/user_number_fake"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <Spinner
+            android:id="@+id/spin_type_visa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/visa_type"
+            android:inputType="textCapCharacters" />
+
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Spinner
-                android:id="@+id/type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/visa_type"
-                android:inputType="textCapCharacters" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Spinner
-                android:id="@+id/year"
+                android:id="@+id/spin_year_visa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/visa_year"
@@ -75,7 +72,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/resultButton"
+            android:id="@+id/btn_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -91,8 +88,8 @@
 
     <WebView
         android:id="@+id/webview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/container_input_visa_data"
         android:visibility="gone" />
 
