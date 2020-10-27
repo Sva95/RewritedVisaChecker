@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         webView.setWebViewClient(new MyWebViewClient());
         webView.loadUrl("https://frs.gov.cz/ioff/application-status");
     }
+
     private void loadUserValidData() {
         loadBaseUrl();
         if (flagOnlyFirstRequest) {
